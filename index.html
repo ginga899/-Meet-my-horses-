@@ -23,10 +23,34 @@ body {
 
 .bg1 { background-image: url("Lovaim.jpg"); }
 .bg2 { background-image: url("lovaim.jpg"); }
- 
+.bg3 { background-image: url("Lovaim.jpg"); } /* FIX */
 
 .bg { opacity: 0; }
 .bg.active { opacity: 1; }
+
+/* 🔥 FEJLÉC MENÜ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    z-index: 15;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: yellow;
+}
 
 /* FELSŐ SÁV */
 .topbar {
@@ -37,18 +61,9 @@ body {
     padding: 20px;
     backdrop-filter: blur(6px);
     z-index: 10;
+    top: 60px; /* hogy ne takarja a navbar */
 }
-</style>
 
-</head>
-
-<body>
-
-<header>
-    <a href="#">Home</a>
-    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-</header>
 /* CÍM */
 .title {
     font-size: 50px;
@@ -67,7 +82,7 @@ body:hover .title {
 /* KÖZÉPSŐ BOX */
 .center-box {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255,255,255,0.3);
@@ -122,16 +137,18 @@ body:hover .title {
     max-height: 80%;
     border-radius: 10px;
 }
-
-/* KILÉPÉS */
-.popup:active {
-    display: none;
-}
 </style>
 
 </head>
 
 <body>
+
+<!-- 🔥 FEJLÉC MENÜ -->
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+</div>
 
 <!-- HÁTTEREK -->
 <div class="bg bg1 active"></div>
@@ -146,57 +163,23 @@ body:hover .title {
 <!-- KÖZÉP -->
 <div class="center-box">
 
-     <div class="name" onclick="showImage('Animax.png')">
-        Animax
-    </div>
-     <div class="name" onclick="showImage('Ketamine.png')">
-        Ketamine
-    </div>
-     <div class="name" onclick="showImage('Mountaindew.png')">
-        Mountaindew
-    </div>
-     <div class="name" onclick="showImage('Speedy Gonzales.png')">
-        Speedy Gonzales
-    </div>
-     <div class="name" onclick="showImage('Lancelot.png')">
-        Lancelot
-    </div>
-     <div class="name" onclick="showImage('Soundwave.png')">
-        Soundwave
-    </div>
-     <div class="name" onclick="showImage('Soloto.png')">
-        Soloto
-    </div>
-     <div class="name" onclick="showImage('Circussa.png')">
-        Circussa
-    </div>
-     <div class="name" onclick="showImage('Generalix.png')">
-        Generalix
-    </div>
-     <div class="name" onclick="showImage('Valory.png')">
-        Valory
-    </div>
-     <div class="name" onclick="showImage('Daybreaker.png')">
-        Daybreaker
-    </div>
-     <div class="name" onclick="showImage('Cybertron.png')">
-        Cybertron
-    </div>
-     <div class="name" onclick="showImage('Doctor.png')">
-        Doctor
-    </div>
-     <div class="name" onclick="showImage('Aie.png')">
-        Aie
-    </div>
-     <div class="name" onclick="showImage('John Marston.png')">
-        John Marston
-    </div>
-    <div class="name">Arthur Morgan</div>
-
-    <!-- PÉLDA: EZ MŰKÖDIK -->
-    <div class="name" onclick="showImage('O-zone.png')">
-        O-zone
-    </div>
+<div class="name" onclick="showImage('Animax.png')">Animax</div>
+<div class="name" onclick="showImage('Ketamine.png')">Ketamine</div>
+<div class="name" onclick="showImage('Mountaindew.png')">Mountaindew</div>
+<div class="name" onclick="showImage('Speedy Gonzales.png')">Speedy Gonzales</div>
+<div class="name" onclick="showImage('Lancelot.png')">Lancelot</div>
+<div class="name" onclick="showImage('Soundwave.png')">Soundwave</div>
+<div class="name" onclick="showImage('Soloto.png')">Soloto</div>
+<div class="name" onclick="showImage('Circussa.png')">Circussa</div>
+<div class="name" onclick="showImage('Generalix.png')">Generalix</div>
+<div class="name" onclick="showImage('Valory.png')">Valory</div>
+<div class="name" onclick="showImage('Daybreaker.png')">Daybreaker</div>
+<div class="name" onclick="showImage('Cybertron.png')">Cybertron</div>
+<div class="name" onclick="showImage('Doctor.png')">Doctor</div>
+<div class="name" onclick="showImage('Aie.png')">Aie</div>
+<div class="name" onclick="showImage('John Marston.png')">John Marston</div>
+<div class="name" onclick="showImage('Arthur Morgan.png')">Arthur Morgan</div>
+<div class="name" onclick="showImage('O-zone.png')">O-zone</div>
 
 </div>
 
@@ -208,8 +191,6 @@ body:hover .title {
 </div>
 
 <script>
-
-/* SCROLL → HÁTTÉR VÁLTÁS */
 window.addEventListener("scroll", () => {
     let scroll = window.scrollY;
     let bgs = document.querySelectorAll(".bg");
@@ -221,7 +202,6 @@ window.addEventListener("scroll", () => {
     else bgs[2].classList.add("active");
 });
 
-/* POPUP KÉP */
 function showImage(src) {
     document.getElementById("popup").style.display = "flex";
     document.getElementById("popupImg").src = src;
@@ -230,8 +210,8 @@ function showImage(src) {
 function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
-
 </script>
 
 </body>
+</html>
 </html>
