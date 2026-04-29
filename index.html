@@ -135,26 +135,27 @@ body {
     max-height: 80%;
     border-radius: 10px;
 }
+    body {
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    padding-bottom: 120px; /* hogy ne takarja ki a footer */
+}
+
+/* FIX LÁBJEGYZET (mindig látszik) */
 .footer {
-    position: relative;
-    margin-top: 50px;
-    padding: 15px 20px;
-    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(6px);
-    width: 100%;
+    text-align: center;
     color: white;
-    z-index: 50;
-}
-
-.footer p {
     font-size: 11px;
-    max-width: 900px;
-    margin: auto;
-    line-height: 1.5;
-    opacity: 0.9;
+    padding: 10px;
+    z-index: 1000;
 }
-
 </style>
 
 </head>
