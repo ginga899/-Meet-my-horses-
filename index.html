@@ -18,7 +18,7 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: opacity 3s;
+    transition: opacity 1s;
 }
 
 .bg1 { background-image: url("Pacikák.jpg"); }
@@ -78,7 +78,7 @@ body {
 /* KÖZÉPSŐ BOX */
 .center-box {
     position: absolute;
-    top: 85%;
+    top: 110%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255,255,255,0.3);
@@ -152,8 +152,15 @@ body {
 <div class="bg bg3"></div>
 
 <!-- FELSŐ SÁV -->
-<div class="topbar">
-    <div class="title">Meet my horses</div>
+<div class="title">
+<svg width="500" height="150">
+    <path id="curve" d="M 50 100 Q 250 20 450 100" fill="transparent"/>
+    <text fill="white" stroke="black" stroke-width="1" font-size="40" text-anchor="middle">
+        <textPath href="#curve" startOffset="50%">
+            Meet my horses
+        </textPath>
+    </text>
+</svg>
 </div>
 
 <!-- KÖZÉP -->
