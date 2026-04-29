@@ -267,7 +267,7 @@ window.addEventListener("scroll", () => {
 
     bgs.forEach(bg => bg.classList.remove("active"));
 
-    if (scroll < 300) bgs[0].classList.add("active");
+    if (scroll < 500) bgs[0].classList.add("active");
     else if (scroll < 250) bgs[1].classList.add("active");
     else bgs[2].classList.add("active");
 });
