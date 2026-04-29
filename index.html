@@ -151,12 +151,21 @@ body {
 
 <!-- FELSŐ SÁV -->
 <div class="title">
-<svg width="500" height="150">
-    <path id="curve" d="M 100 150 Q 300 20 500 150" fill="transparent"/>
-    <text fill="white" stroke="black" stroke-width="1" font-size="40" text-anchor="middle">
-        <textPath href="#curve" startOffset="50%">
-            Meet my horses
-        </textPath>
+<svg width="500" height="260">
+    <path id="curve1" d="M 80 120 Q 250 0 420 120" fill="transparent"/>
+    <path id="curve2" d="M 80 160 Q 250 40 420 160" fill="transparent"/>
+    <path id="curve3" d="M 80 200 Q 250 80 420 200" fill="transparent"/>
+
+    <text font-size="55" fill="white" stroke="black" stroke-width="1" text-anchor="middle">
+        <textPath href="#curve1" startOffset="50%">Meet</textPath>
+    </text>
+
+    <text font-size="55" fill="white" stroke="black" stroke-width="1" text-anchor="middle">
+        <textPath href="#curve2" startOffset="50%">My</textPath>
+    </text>
+
+    <text font-size="55" fill="white" stroke="black" stroke-width="1" text-anchor="middle">
+        <textPath href="#curve3" startOffset="50%">Horses</textPath>
     </text>
 </svg>
 </div>
