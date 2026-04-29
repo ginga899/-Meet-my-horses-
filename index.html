@@ -142,10 +142,9 @@ body {
     padding-bottom: 120px; /* hogy ne takarja ki a footer */
 }
 
-/* FIX LÁBJEGYZET (mindig látszik) */
 .footer {
     position: fixed;
-    bottom: 0;
+    bottom: -100px; /* el van rejtve */
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.6);
@@ -155,6 +154,12 @@ body {
     font-size: 11px;
     padding: 10px;
     z-index: 1000;
+    transition: 0.4s;
+}
+
+/* amikor megjelenik */
+.footer.show {
+    bottom: 0;
 }
 </style>
 
@@ -276,7 +281,16 @@ function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
 
+window.addEventListener("scroll", () => {
+    const footer = document.querySelector(".footer");
 
+    if (window.scrollY > 100) {
+        footer.classList.add("show");
+    } else {
+        footer.classList.remove("show");
+    }
+});
+    
 document.addEventListener("mousemove", (e) => {
     const title = document.querySelector(".title");
 
